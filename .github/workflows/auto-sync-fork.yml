@@ -1,0 +1,23 @@
+name: Auto Sync Fork (CIPP)
+# Synchronise quotidiennement ce fork avec l'upstream KelvinTegelaar/CIPP
+# pour que le frontend reste aligne avec l'API (qui s'auto-update).
+# Necessite un secret CIPP_SYNC_PAT = PAT GitHub avec scopes repo + workflow.
+on:
+  schedule:
+    - cron: '0 4 * * *'   # tous les jours a 04:00 UTC
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync fork with upstream
+        env:
+          GH_TOKEN: ${{ secrets.CIPP_SYNC_PAT }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::Secret CIPP_SYNC_PAT manquant. Ajoutez-le dans Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          gh repo sync ${{ github.repository }} --source KelvinTegelaar/CIPP --branch main --force
