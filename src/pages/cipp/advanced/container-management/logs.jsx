@@ -15,16 +15,9 @@ import {
   Tab,
   Tabs,
 } from "@mui/material";
-<<<<<<<< HEAD:src/pages/cipp/advanced/container-management/logs.js
-import { ExpandMore, Search, Refresh, PlayArrow } from "@mui/icons-material";
-import { CippFormComponent } from "../../../../components/CippComponents/CippFormComponent";
-import { Grid } from "@mui/system";
-import { Layout as DashboardLayout } from "../../../../layouts/index.js";
-========
 import { CippFormComponent } from "../../../../components/CippComponents/CippFormComponent";
 import { Grid } from "@mui/system";
 import { Layout as DashboardLayout } from "../../../../layouts/index";
->>>>>>>> 39108b1223813de1f2be6b3cd9ddd9421bac9ee4:src/pages/cipp/advanced/container-management/logs.jsx
 import { TabbedLayout } from "../../../../layouts/TabbedLayout";
 import { CippTablePage } from "../../../../components/CippComponents/CippTablePage";
 import { ApiGetCall } from "../../../../api/ApiCall";
@@ -318,13 +311,9 @@ const ContainerLogsFilter = ({ onSubmitFilter }) => {
                   }}
                 />
 
-<<<<<<<< HEAD:src/pages/cipp/advanced/container-management/logs.js
-                <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
-========
                 <Stack direction="row" spacing={2} useFlexGap sx={{
                   flexWrap: "wrap"
                 }}>
->>>>>>>> 39108b1223813de1f2be6b3cd9ddd9421bac9ee4:src/pages/cipp/advanced/container-management/logs.jsx
                   <Button
                     type="submit"
                     variant="contained"
@@ -466,15 +455,10 @@ const ContainerLogsFilter = ({ onSubmitFilter }) => {
                   </Grid>
                 </Grid>
 
-<<<<<<<< HEAD:src/pages/cipp/advanced/container-management/logs.js
-                <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
-                  <Button type="submit" variant="contained" startIcon={<Search />}>
-========
                 <Stack direction="row" spacing={2} useFlexGap sx={{
                   flexWrap: "wrap"
                 }}>
                   <Button type="submit" variant="contained" startIcon={<CippIcons.MagnifyingGlassIcon />}>
->>>>>>>> 39108b1223813de1f2be6b3cd9ddd9421bac9ee4:src/pages/cipp/advanced/container-management/logs.jsx
                     Search Logs
                   </Button>
                   <Button variant="outlined" onClick={handleClear}>

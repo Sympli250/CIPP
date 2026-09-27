@@ -41,21 +41,14 @@ import {
   Tooltip as RechartsTooltip,
   Legend,
 } from "recharts";
-<<<<<<<< HEAD:src/pages/cipp/advanced/container-management/worker-health.js
-import { Layout as DashboardLayout } from "../../../../layouts/index.js";
-========
 import { Layout as DashboardLayout } from "../../../../layouts/index";
->>>>>>>> 39108b1223813de1f2be6b3cd9ddd9421bac9ee4:src/pages/cipp/advanced/container-management/worker-health.jsx
 import { TabbedLayout } from "../../../../layouts/TabbedLayout";
 import { CippInfoBar } from "../../../../components/CippCards/CippInfoBar";
 import { CippDataTable } from "../../../../components/CippTable/CippDataTable";
 import { ApiGetCall, ApiPostCall } from "../../../../api/ApiCall";
 import tabOptions from "./tabOptions";
 import { useTitleClaimedByTabPicker } from "../../../../layouts/tab-navigation-context";
-<<<<<<<< HEAD:src/pages/cipp/advanced/container-management/worker-health.js
-========
 import { useIsNarrowForTables } from "../../../../hooks/use-breakpoint";
->>>>>>>> 39108b1223813de1f2be6b3cd9ddd9421bac9ee4:src/pages/cipp/advanced/container-management/worker-health.jsx
 
 const formatDuration = (ms) => {
   if (ms === 0 || ms == null) return "—";
@@ -80,13 +73,8 @@ const WorkerStatusChip = ({ isBusy, currentFunction }) => {
           label={currentFunction || "Busy"}
           color="warning"
           size="small"
-<<<<<<<< HEAD:src/pages/cipp/advanced/container-management/worker-health.js
-          icon={<PlayArrow />}
-          sx={{ maxWidth: 420 }}
-========
           icon={<CippIcons.PlayArrow />}
           sx={{ maxWidth: { xs: "100%", md: 420 } }}
->>>>>>>> 39108b1223813de1f2be6b3cd9ddd9421bac9ee4:src/pages/cipp/advanced/container-management/worker-health.jsx
         />
       </Tooltip>
     );
@@ -785,10 +773,7 @@ const Page = () => {
     healthQuery.data,
     startupQuery.data,
     historyQuery.data,
-<<<<<<<< HEAD:src/pages/cipp/advanced/container-management/worker-health.js
-========
     memoryDetailQuery.data,
->>>>>>>> 39108b1223813de1f2be6b3cd9ddd9421bac9ee4:src/pages/cipp/advanced/container-management/worker-health.jsx
     historyRange,
     queryClient,
     jobLimit,
@@ -950,17 +935,6 @@ const Page = () => {
       <Head>
         <title>Worker Health | CIPP</title>
       </Head>
-<<<<<<<< HEAD:src/pages/cipp/advanced/container-management/worker-health.js
-      <Box sx={{ flexGrow: 1, pb: 4 }}>
-        <Container maxWidth="xl">
-          <Stack spacing={2}>
-            {/* ── Header toolbar ── */}
-            <Stack direction="row" justifyContent="space-between" alignItems="center">
-              {/* Empty Box keeps the toolbar on the right when the mobile tab picker has
-                  already said "Worker Health" directly above this row. */}
-              {titleClaimed ? <Box /> : <Typography variant="h4">Worker Health</Typography>}
-              <Stack direction="row" alignItems="center" spacing={1}>
-========
       <Box sx={{ flexGrow: 1, pb: { xs: 10, md: 4 } }}>
         <Container maxWidth="xl">
           <Stack spacing={2}>
@@ -977,7 +951,6 @@ const Page = () => {
               <Stack direction="row" spacing={1} sx={{
                 alignItems: "center"
               }}>
->>>>>>>> 39108b1223813de1f2be6b3cd9ddd9421bac9ee4:src/pages/cipp/advanced/container-management/worker-health.jsx
                 {isImported && (
                   <Chip
                     label={`Viewing imported data (${importedData.exportedAt ? new Date(importedData.exportedAt).toLocaleString() : "unknown"})`}
@@ -1004,15 +977,9 @@ const Page = () => {
                       disabled={isImported}
                     >
                       {effectivePaused ? (
-<<<<<<<< HEAD:src/pages/cipp/advanced/container-management/worker-health.js
-                        <PlayArrow fontSize="small" />
-                      ) : (
-                        <Pause fontSize="small" />
-========
                         <CippIcons.PlayArrow fontSize="small" />
                       ) : (
                         <CippIcons.Pause fontSize="small" />
->>>>>>>> 39108b1223813de1f2be6b3cd9ddd9421bac9ee4:src/pages/cipp/advanced/container-management/worker-health.jsx
                       )}
                     </IconButton>
                   </span>
